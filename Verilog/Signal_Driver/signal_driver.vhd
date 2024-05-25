@@ -25,3 +25,12 @@ begin
     end process;
 
 end behv1;
+
+architecture behv2 of Driver is 
+begin 
+
+    F <= x; 
+
+end behv2; 
+
+------------------------------------------
