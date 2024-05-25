@@ -13,3 +13,9 @@ begin
     end if;
 end process;
 ```
+### 2.Concurrent Signal Assignments:
+Concurrent statements directly assign values to signals and are evaluated continuously.
+
+```vhdl
+signal_b <= not signal_a;
+```
