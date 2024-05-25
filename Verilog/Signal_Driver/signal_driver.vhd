@@ -10,3 +10,18 @@ port(	x: in std_logic;
 end Driver;  
 
 ----------------------------------------
+
+architecture behv1 of Driver is
+begin
+
+    process(x)
+    begin
+        -- compare to truth table
+        if (x='1') then
+            F <= '1';
+        else
+            F <= '0';
+        end if;
+    end process;
+
+end behv1;
