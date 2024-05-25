@@ -19,3 +19,13 @@ Concurrent statements directly assign values to signals and are evaluated contin
 ```vhdl
 signal_b <= not signal_a;
 ```
+
+### 3.Component Instantiations:
+The signals in the architecture where a component (or other VHDL object) is created are driven by its output signals.
+```vhdl
+U1: entity work.SomeComponent
+    port map (
+        input_signal => signal_a,
+        output_signal => signal_c
+    );
+```
