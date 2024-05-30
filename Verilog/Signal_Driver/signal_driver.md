@@ -33,3 +33,6 @@ U1: entity work.SomeComponent
 ### Resolution Functions:
 
 A resolution function establishes the signal's final value when numerous drivers operate the same signal. One built-in resolution function of the std_logic type, for instance, resolves conflicts between '1' and '0' on the same signal line, producing the result 'X' (unknown).
+
+### Driving Value:
+A signal in VHDL can have multiple drivers. The final value of the signal is determined by the driving values and any resolution functions associated with the signal type
