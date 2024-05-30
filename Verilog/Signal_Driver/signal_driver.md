@@ -52,4 +52,27 @@ entity SignalDriversExample is
     );
 end SignalDriversExample;
 
+architecture Behavioral of SignalDriversExample is
+    signal intermediate_signal : std_logic;
+begin
+
+    -- Concurrent Signal Assignment
+    c <= not a;
+
+    -- Process Driving a Signal
+    process (clk, reset)
+    begin
+        if reset = '1' then
+            intermediate_signal <= '0';
+        elsif rising_edge(clk) then
+            intermediate_signal <= a;
+        end if;
+    end process;
+
+    -- Another Concurrent Signal Assignment
+    b <= intermediate_signal;
+
+end Behavioral;
+
+
 ```
