@@ -36,3 +36,20 @@ A resolution function establishes the signal's final value when numerous drivers
 
 ### Driving Value:
 A signal in VHDL can have multiple drivers. The final value of the signal is determined by the driving values and any resolution functions associated with the signal type
+
+## Example of Signal Drivers
+```vhdl
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity SignalDriversExample is
+    port (
+        clk : in std_logic;
+        reset : in std_logic;
+        a : in std_logic;
+        b : out std_logic;
+        c : out std_logic
+    );
+end SignalDriversExample;
+
+```
