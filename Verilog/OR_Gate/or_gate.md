@@ -20,6 +20,4 @@ In this truth table:
 
 An OR gate is represented by the following symbol:
 
-A --|
-    | )-- F
-B --|
+![OR Gate Symbol](https://upload.wikimedia.org/wikipedia/commons/4/4c/Or-gate-en.svg)
