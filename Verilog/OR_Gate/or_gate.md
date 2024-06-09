@@ -27,3 +27,17 @@ In this symbol:
 - A and B are input terminals.
 - F (out) is the output terminal.
 - The OR symbol represents the logical OR operation performed by the gate.
+
+```vhdl
+-- or_gate.vhd
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity OR_ent is
+port(	x: in std_logic;
+	y: in std_logic;
+	F: out std_logic
+);
+end OR_ent; 
+
+```
