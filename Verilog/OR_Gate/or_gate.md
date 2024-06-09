@@ -21,5 +21,5 @@ In this truth table:
 An OR gate is represented by the following symbol:
 
 A --|
-| )-- F
-B --|____/
+    | )-- F
+B --|
