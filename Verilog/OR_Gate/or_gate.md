@@ -45,3 +45,17 @@ This VHDL code defines an entity named OR_ent representing a 2-input OR gate. It
 - x and y are input ports of type std_logic, representing the inputs to the OR gate.
 - F is an output port of type std_logic, representing the output of the OR gate.
 
+```vhdl
+architecture OR_arch of OR_ent is
+begin
+    process (x, y)
+    begin
+        if ((x = '0') and (y = '0')) then
+            F <= '0';
+        else
+            F <= '1';
+        end if;
+    end process;
+end OR_arch;
+
+```
