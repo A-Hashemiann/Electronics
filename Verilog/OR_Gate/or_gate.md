@@ -15,3 +15,11 @@ The truth table for a two-input OR gate is as follows:
 In this truth table:
 - If either input A or input B is 1, the output F is 1.
 - The output F is 0 only when both input A and input B are 0.
+
+## Symbol Representation
+
+An OR gate is represented by the following symbol:
+
+A _____
+| |
+B | OR| F
