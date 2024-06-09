@@ -59,3 +59,6 @@ begin
 end OR_arch;
 
 ```
+
+- the OR gate's behavior is specified by this architecture, OR_arch, through the use of a process statement.
+- It verifies the values of inputs x and y inside the procedure. Output F is set to '0' if both x and y are '0' (logic low). The output F is set to '1' otherwise.
