@@ -21,3 +21,9 @@ In this truth table:
 An OR gate is represented by the following symbol:
 
 ![OR Gate Symbol](https://upload.wikimedia.org/wikipedia/commons/4/4c/Or-gate-en.svg)
+
+
+In this symbol:
+- A and B are input terminals.
+- F (out) is the output terminal.
+- The OR symbol represents the logical OR operation performed by the gate.
