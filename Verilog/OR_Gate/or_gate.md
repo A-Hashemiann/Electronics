@@ -1,0 +1,2 @@
+# Digital Logic: OR Gate
+In digital logic, an OR gate is a fundamental logic gate that performs a logical OR operation. It takes two or more binary inputs and produces a single binary output. The output is true (logic high, typically represented by '1') if at least one of the inputs is true; otherwise, the output is false (logic low, typically represented by '0').
