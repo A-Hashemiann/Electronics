@@ -41,3 +41,7 @@ port(	x: in std_logic;
 end OR_ent; 
 
 ```
+This VHDL code defines an entity named OR_ent representing a 2-input OR gate. It has two input ports x and y, and one output port F.
+- x and y are input ports of type std_logic, representing the inputs to the OR gate.
+- F is an output port of type std_logic, representing the output of the OR gate.
+
