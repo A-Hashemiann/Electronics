@@ -20,6 +20,6 @@ In this truth table:
 
 An OR gate is represented by the following symbol:
 
-A _____
-| |
-B | OR| F
+A --|
+| )-- F
+B --|____/
