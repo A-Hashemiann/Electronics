@@ -22,3 +22,10 @@ begin
     end process;
 
 end behav1;
+
+architecture behav2 of AND_ent is
+begin
+
+    F <= x and y;
+
+end behav2;
