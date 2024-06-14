@@ -7,3 +7,18 @@ port(	x: in std_logic;
 	F: out std_logic
 );
 end AND_ent;  
+
+architecture behav1 of AND_ent is
+begin
+
+    process(x, y)
+    begin
+        -- compare to truth table
+        if ((x='1') and (y='1')) then
+	    F <= '1';
+	else
+	    F <= '0';
+	end if;
+    end process;
+
+end behav1;
