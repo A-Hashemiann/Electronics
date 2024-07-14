@@ -23,3 +23,10 @@ begin
     end process;
 
 end behv1;
+
+architecture behv2 of XOR_ent is 
+begin 
+
+    F <= x xor y; 
+
+end behv2;
