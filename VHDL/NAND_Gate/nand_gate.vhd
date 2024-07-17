@@ -23,3 +23,10 @@ begin
     end process;
 
 end behv1;
+
+architecture behv2 of NAND_ent is 
+begin 
+
+	F <= x nand y; 
+
+end behv2;
