@@ -7,3 +7,12 @@ entity Inverter is
         Y : out std_logic   -- Output signal
     );
 end entity Inverter;
+
+architecture Behavioral of Inverter is
+begin
+    -- Process that describes the inversion behavior
+    process(A)
+    begin
+        Y <= not A;  -- Invert the input signal
+    end process;
+end architecture Behavioral;
