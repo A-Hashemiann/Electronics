@@ -15,3 +15,9 @@ begin
 	F1 <= A and B;			-- behavior
 end process;
 end behv;
+
+architecture struct of comb_ckt is
+
+  
+
+end struct;
