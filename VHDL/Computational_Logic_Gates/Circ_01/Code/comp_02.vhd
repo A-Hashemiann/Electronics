@@ -16,8 +16,3 @@ begin
 end process;
 end behv;
 
-architecture struct of comb_ckt is
-
-  
-
-end struct;

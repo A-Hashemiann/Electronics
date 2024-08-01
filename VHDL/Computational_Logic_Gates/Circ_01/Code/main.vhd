@@ -10,3 +10,9 @@ port(	input1: in std_logic;
 	output: out std_logic
 );
 end comb_ckt;
+
+architecture struct of comb_ckt is
+
+  
+
+end struct;
