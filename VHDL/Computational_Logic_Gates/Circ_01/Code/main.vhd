@@ -20,4 +20,11 @@ architecture struct of comb_ckt is
     );
     end component;
 
+	component OR_GATE is		-- entity of OR_GATE
+    port(   X:	in std_logic;
+    	    Y:	in std_logic;
+    	    F2: out std_logic
+    );
+    end component;
+
 end struct;
