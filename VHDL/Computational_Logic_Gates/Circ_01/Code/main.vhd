@@ -27,4 +27,13 @@ architecture struct of comb_ckt is
     );
     end component;
 
+	  signal wire: std_logic;		-- signal just like wire
+
+	  begin
+
+  
+
+    Gate1: AND_GATE port map (A=>input1, B=>input2, F1=>wire);
+    Gate2: OR_GATE port map (X=>wire, Y=>input3, F2=>output);
+
 end struct;
