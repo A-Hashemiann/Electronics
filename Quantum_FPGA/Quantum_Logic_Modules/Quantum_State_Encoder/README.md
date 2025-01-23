@@ -14,10 +14,10 @@ The encoder maps quantum states into binary values as follows:
 
 $$
 \begin{aligned}
-\text{STATE\ZERO:} & \quad \vert 0 \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 0 \\
-\text{STATE\ONE:} & \quad \vert 1 \rangle \rightarrow \text{Real} = 0, \; \text{Imaginary} = 64 \\
-\text{STATE\PLUS:} & \quad \vert + \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 64 \\
-\text{STATE\MINUS:} & \quad \vert - \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = -64
+\text{STATE $\vert 0 \rangle$:} & \quad \vert 0 \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 0 \\
+\text{STATE $\vert 1 \rangle$:} & \quad \vert 1 \rangle \rightarrow \text{Real} = 0, \; \text{Imaginary} = 64 \\
+\text{STATE $\vert + \rangle$:} & \quad \vert + \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 64 \\
+\text{STATE $\vert + \rangle$:} & \quad \vert - \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = -64
 \end{aligned}
 $$
 
@@ -44,10 +44,10 @@ The encoder implements a case-based selection for quantum state encoding:
 Each quantum state is encoded as a 16-bit binary constant, split into real and imaginary parts:
 
 $$
-\text{STATE\ZERO} = 0x4000, \; 
-\text{STATE\ONE} = 0x0040, \;
-\text{STATE\PLUS} = 0x4040, \;
-\text{STATE\MINUS} = 0x40C0
+\text{STATE$\vert 1 \rangle$} = 0x4000, \; 
+\text{STATE$\vert 0 \rangle$} = 0x0040, \;
+\text{STATE$\vert + \rangle$} = 0x4040, \;
+\text{STATE$\vert - \rangle$} = 0x40C0 \;
 $$
 
 
