@@ -41,16 +41,15 @@ The encoder implements a case-based selection for quantum state encoding:
 ### Constants
 Each quantum state is encoded as a 16-bit binary constant, split into real and imaginary parts:
 
-$$
-\text{STATE\_ZERO} = 0x4000, \; 
-\text{STATE\_ONE} = 0x0040, \;
-\text{STATE\_PLUS} = 0x4040, \;
-\text{STATE\_MINUS} = 0x40C0
-$$
+$\text{STATE\_ZERO} = 0x4000, \$ 
+$\text{STATE\_ONE} = 0x0040, \;$
+$\text{STATE\_PLUS} = 0x4040, \;$
+$\text{STATE\_MINUS} = 0x40C0$
+
 
 ## Simulation
 The simulation verifies the encoder's functionality using the following tools:
-- **Toolchain**: Compatible with ModelSim, GHDL, or Vivado Simulator.
+- **Toolchain**: Compatible with ModelSim.
 - **Testbench**: Validates all quantum states and ensures correct binary output.
 - **Waveform Analysis**: Visualizes real and imaginary parts for verification.
 
