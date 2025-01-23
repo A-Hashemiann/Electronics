@@ -43,10 +43,12 @@ The encoder implements a case-based selection for quantum state encoding:
 ### Constants
 Each quantum state is encoded as a 16-bit binary constant, split into real and imaginary parts:
 
-$\text{STATE\_ZERO} = 0x4000, \$ 
-$\text{STATE\_ONE} = 0x0040, \;$
-$\text{STATE\_PLUS} = 0x4040, \;$
-$\text{STATE\_MINUS} = 0x40C0$
+$$
+\text{STATE\ZERO} = 0x4000, \; 
+\text{STATE\ONE} = 0x0040, \;
+\text{STATE\PLUS} = 0x4040, \;
+\text{STATE\MINUS} = 0x40C0
+$$
 
 
 ## Simulation
