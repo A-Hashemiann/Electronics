@@ -13,12 +13,13 @@ The encoder maps quantum states into binary values as follows:
 
 $$
 \begin{aligned}
-\text{STATE\_ZERO:} & \quad \vert 0 \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 0 \\
-\text{STATE\_ONE:} & \quad \vert 1 \rangle \rightarrow \text{Real} = 0, \; \text{Imaginary} = 64 \\
-\text{STATE\_PLUS:} & \quad \vert + \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 64 \\
-\text{STATE\_MINUS:} & \quad \vert - \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = -64
+\text{STATE\_\_ZERO:} & \quad \vert 0 \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 0 \\
+\text{STATE\_\_ONE:} & \quad \vert 1 \rangle \rightarrow \text{Real} = 0, \; \text{Imaginary} = 64 \\
+\text{STATE\_\_PLUS:} & \quad \vert + \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 64 \\
+\text{STATE\_\_MINUS:} & \quad \vert - \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = -64
 \end{aligned}
 $$
+
 
 ## VHDL Design Structure
 ### Entity Declaration
