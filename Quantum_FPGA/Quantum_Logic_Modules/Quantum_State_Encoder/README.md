@@ -66,3 +66,6 @@ The simulation verifies the encoder's functionality using the following tools:
 - Support for additional quantum gates like $R_x$, $R_y$, $R_z$.
 - Optimization for FPGA resource usage.
 - Implementation of multi-qubit state encoders.
+
+
+![modelsim](modelsim.jpg)
