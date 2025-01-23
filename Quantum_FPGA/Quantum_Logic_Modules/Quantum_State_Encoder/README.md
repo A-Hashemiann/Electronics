@@ -11,13 +11,13 @@ The **Quantum State Encoder** is a VHDL-based hardware design aimed at encoding 
 ## Quantum States Encoding
 The encoder maps quantum states into binary values as follows:
 
-This sentence uses `$` delimiters to show math inline: $\sqrt{3x-1}+(1+x)^2$
+
 $$
 \begin{aligned}
-\text{STATE\_\_ZERO:} & \quad \vert 0 \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 0 \\
-\text{STATE\_\_ONE:} & \quad \vert 1 \rangle \rightarrow \text{Real} = 0, \; \text{Imaginary} = 64 \\
-\text{STATE\_\_PLUS:} & \quad \vert + \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 64 \\
-\text{STATE\_\_MINUS:} & \quad \vert - \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = -64
+\text{STATE\ZERO:} & \quad \vert 0 \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 0 \\
+\text{STATE\ONE:} & \quad \vert 1 \rangle \rightarrow \text{Real} = 0, \; \text{Imaginary} = 64 \\
+\text{STATE\PLUS:} & \quad \vert + \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = 64 \\
+\text{STATE\MINUS:} & \quad \vert - \rangle \rightarrow \text{Real} = 64, \; \text{Imaginary} = -64
 \end{aligned}
 $$
 
