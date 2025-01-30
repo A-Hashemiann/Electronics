@@ -78,6 +78,13 @@ begin
         Din <= (others => '0');
         
      
+	    for i in 0 to 7 loop
+            wait for 8.7us;
+            wait until rising_edge(Clk);
+            ShiftEn <= '1';
+            wait until rising_edge(Clk);
+            ShiftEn <= '0';
+        end loop;
         
         wait;
     end process;
