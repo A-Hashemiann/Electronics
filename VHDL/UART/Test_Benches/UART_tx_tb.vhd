@@ -64,7 +64,19 @@ begin
     TestProcess:process
     begin
         
+        Rst <= '1';
+        TxStart <= '0';
+        TxData <= (others => '0');
+        wait for 100ns;
+        Rst <= '0';
+        wait for 100ns;
         
+        wait until rising_edge(Clk);
+        TxData <= x"AA";
+        TxStart <= '1';
+        wait until rising_edge(Clk);
+        TxStart <= '0';
+        TxData <= (others => '0');
        
         
         wait;
