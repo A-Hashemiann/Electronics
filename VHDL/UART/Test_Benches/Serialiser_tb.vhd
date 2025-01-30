@@ -44,17 +44,38 @@ begin
     UUT1 : Serialiser
     generic map
     (
-       
+       DATA_WIDTH      => DATA_WIDTH,
+       DEFAULT_STATE   => DEFAULT_STATE
     )
     port map
     (
+	    Clk     => Clk,
+        Rst     => Rst,
+        
+        ShiftEn => ShiftEn,
+        Load    => Load,
+        Din     => Din,
+        Dout    => Dout
        
     );
     
     
     TestProcess:process
     begin
+        Rst <= '1';
+        ShiftEn <= '0';
+        Load <= '0';
+        Din <= (others => '0');
+        wait for 100ns;
+        Rst <= '0';
+        wait for 100ns;
         
+        wait until rising_edge(Clk);
+        Load <= '1';
+        Din <= x"AA";
+        wait until rising_edge(Clk);
+        Load <= '0';
+        Din <= (others => '0');
         
      
         
