@@ -58,7 +58,45 @@ begin
     
     TestProcess:process
     begin
+        Rst <= '1';
+        RS232_Rx <= '1';
+        RxIRQClear <= '0';
+        wait for 100ns;
+        Rst <= '0';
+        wait for 100ns;
         
+        -- Transmit Start Bit
+        RS232_Rx <= '0';
+        wait for 8.7us;
+        
+        -- Transmit Data Bits LSB first
+        RS232_Rx <= PCData(0);
+        wait for 8.7us;
+        RS232_Rx <= PCData(1);
+        wait for 8.7us;
+        RS232_Rx <= PCData(2);
+        wait for 8.7us;
+        RS232_Rx <= PCData(3);
+        wait for 8.7us;
+        RS232_Rx <= PCData(4);
+        wait for 8.7us;
+        RS232_Rx <= PCData(5);
+        wait for 8.7us;
+        RS232_Rx <= PCData(6);
+        wait for 8.7us;
+        RS232_Rx <= PCData(7);
+        wait for 8.7us;
+        
+        -- Transmit Stop Bit
+        RS232_Rx <= '1';
+        wait for 8.7us;
+        
+        wait for 50ns;
+        
+        wait until rising_edge(Clk);
+        RxIRQClear <= '1';
+        wait until rising_edge(Clk);
+        RxIRQClear <= '0';
         wait;
     end process;
     
