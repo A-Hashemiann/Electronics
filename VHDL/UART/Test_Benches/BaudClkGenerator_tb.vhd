@@ -37,11 +37,18 @@ begin
     UUT : BaudClkGenerator
     generic map
     (
-        
+        NUMBER_OF_CLOCKS    => 10,
+        SYS_CLK_FREQ        => 50000000,
+        BAUD_RATE           => 115200
     )
     port map
     (
-       
+	    Clk => Clk,
+		Rst => Rst,
+		
+		Start   => Start,
+		BaudClk => BaudClk,
+		Ready   => Ready
     );
     
     
