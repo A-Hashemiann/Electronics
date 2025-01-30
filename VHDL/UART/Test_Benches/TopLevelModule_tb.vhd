@@ -80,7 +80,28 @@ begin
     end process;
     
     TestProcess:process
-    
+     variable TransmitDataVector : std_logic_vector(RS232_DATA_BITS - 1 downto 0);
+        
+        procedure TRANSMIT_CHARACTER
+        (
+            constant TransmitData : in integer
+        ) is
+        begin
+            TransmitDataVector := std_logic_vector(to_unsigned(TransmitData, RS232_DATA_BITS));
+            -- Transmit Start Bit
+            rs232_rx_pin <= '0';
+            wait for 8.7us;
+            
+            -- Transmit Data Bits LSB first
+            for i in 1 to RS232_DATA_BITS loop
+                rs232_rx_pin <= TransmitDataVector(i-1);
+                wait for 8.7us;
+            end loop;
+            
+            -- Transmit Stop Bit
+            rs232_rx_pin <= '1';
+            wait for 8.7us;
+      
         
         end procedure;
     
