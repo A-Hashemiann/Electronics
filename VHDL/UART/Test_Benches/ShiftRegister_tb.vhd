@@ -53,7 +53,50 @@ begin
 
     TestProcess:process
     begin
+        Rst <= '1';
+        ShiftEn <= '0';
+        Din <= '0';
+        wait for 100ns;
+        Rst <= '0';
+        wait for 100ns;
         
+        -- RS232 trasmitted here is 0x51 -> 0101 0001
+        
+        Din <= '1';
+        wait for 4.3us;
+        wait until rising_edge(Clk);
+        ShiftEn <= '1';
+        wait until rising_edge(Clk);
+        ShiftEn <= '0';
+        wait for 4.3us;
+        
+        for i in 0 to 2 loop
+            Din <= '0';
+            wait for 4.3us;
+            wait until rising_edge(Clk);
+            ShiftEn <= '1';
+            wait until rising_edge(Clk);
+            ShiftEn <= '0';
+            wait for 4.3us;
+        end loop;
+        
+        for i in 0 to 1 loop
+            Din <= '1';
+            wait for 4.3us;
+            wait until rising_edge(Clk);
+            ShiftEn <= '1';
+            wait until rising_edge(Clk);
+            ShiftEn <= '0';
+            wait for 4.3us;
+            
+            Din <= '0';
+            wait for 4.3us;
+            wait until rising_edge(Clk);
+            ShiftEn <= '1';
+            wait until rising_edge(Clk);
+            ShiftEn <= '0';
+            wait for 4.3us;
+        end loop;
         wait;
     end process;
 
