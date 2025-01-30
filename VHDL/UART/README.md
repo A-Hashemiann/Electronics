@@ -4,6 +4,6 @@
 
 ---
 
-# Quartus Project Last Compile Report
+# Latest Compilation Report for Quartus Project
 
 ![Quartus_01](Quartus_01.jpg)
