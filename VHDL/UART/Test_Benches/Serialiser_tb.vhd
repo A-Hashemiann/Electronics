@@ -29,7 +29,13 @@ port
 );
 end component;
 
-
+signal Clk     : std_logic := '0';
+signal Rst     : std_logic;
+    
+signal ShiftEn : std_logic;
+signal Load    : std_logic;
+signal Din     : std_logic_vector(DATA_WIDTH-1 downto 0);
+signal Dout    : std_logic;
     
 begin
     
@@ -42,7 +48,7 @@ begin
     )
     port map
     (
-       t
+       
     );
     
     
