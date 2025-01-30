@@ -54,7 +54,15 @@ begin
     
     main:process
     begin
-       
+        Rst <= '1';
+        Start <= '0';
+        wait for 100ns;
+        Rst <= '0';
+        
+        wait until rising_edge(Clk);
+        Start <= '1';
+        wait until rising_edge(Clk);
+        Start <= '0';
         
         wait;
     end process;
