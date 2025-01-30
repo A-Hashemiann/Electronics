@@ -61,7 +61,22 @@ begin
     
     SerialToParallel:process
     begin
+        -- Waiting for the start bit
+        wait until falling_edge(rs232_tx_pin);
         
+        -- Waits until the middle of the start bit
+        wait for 4.3us;
+        
+        for i in 1 to RS232_DATA_BITS loop
+            -- Waits until the middle of the next bit
+            wait for 8.7us;
+            -- Capture the value of the next bit into TransmittedData
+            TransmittedData(i-1) <= rs232_tx_pin;
+        end loop;
+        
+        -- Last wait is to wait until the stop bit has been transmitted
+        wait for 8.7us;
+        DataTransmittedToPC <= TransmittedData;
     end process;
     
     TestProcess:process
