@@ -1,11 +1,11 @@
 # Modelsim Simulation Report
-![Modelsim_01](modelsim_01.jpg)
-![Modelsim_02](modelsim_02.jpg)
-![RLT](RLT.jpg)
+![Modelsim_01](Images/modelsim_01.jpg)
+![Modelsim_02](Images/modelsim_02.jpg)
+![RLT](Images/RLT.jpg)
 
 ---
 
 # Compilation Report for Quartus Project
 
-![Quartus_01](Quartus_01.jpg)
-![PIN](pin.jpg)
+![Quartus_01](Images/Quartus_01.jpg)
+![PIN](Images/pin.jpg)
