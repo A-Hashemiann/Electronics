@@ -4,4 +4,6 @@
 
 ---
 
-# Quartus Project Compile 
+# Quartus Project Last Compile Report
+
+![Quartus_01](Quartus_01.jpg)
