@@ -1,0 +1,241 @@
+|TopLevelModule
+Clk => UART_tx:UART_Transmitter.Clk
+Clk => TxStart.CLK
+Clk => SMVariable.CLK
+Clk => UART_rx:UART_Receiver.Clk
+Rst => UART_tx:UART_Transmitter.Rst
+Rst => TxStart.ACLR
+Rst => SMVariable.ACLR
+Rst => UART_rx:UART_Receiver.Rst
+rs232_rx_pin => UART_rx:UART_Receiver.RS232_Rx
+rs232_tx_pin << UART_tx:UART_Transmitter.UART_tx_pin
+
+
+|TopLevelModule|UART_tx:UART_Transmitter
+Clk => Serialiser:UART_SERIALISER_INST.Clk
+Clk => BaudClkGenerator:UART_BIT_TIMING_INST.Clk
+Rst => Serialiser:UART_SERIALISER_INST.Rst
+Rst => BaudClkGenerator:UART_BIT_TIMING_INST.Rst
+TxStart => Serialiser:UART_SERIALISER_INST.Load
+TxStart => BaudClkGenerator:UART_BIT_TIMING_INST.Start
+TxData[0] => Serialiser:UART_SERIALISER_INST.Din[1]
+TxData[1] => Serialiser:UART_SERIALISER_INST.Din[2]
+TxData[2] => Serialiser:UART_SERIALISER_INST.Din[3]
+TxData[3] => Serialiser:UART_SERIALISER_INST.Din[4]
+TxData[4] => Serialiser:UART_SERIALISER_INST.Din[5]
+TxData[5] => Serialiser:UART_SERIALISER_INST.Din[6]
+TxData[6] => Serialiser:UART_SERIALISER_INST.Din[7]
+TxData[7] => Serialiser:UART_SERIALISER_INST.Din[8]
+TxReady <= BaudClkGenerator:UART_BIT_TIMING_INST.Ready
+UART_tx_pin <= Serialiser:UART_SERIALISER_INST.Dout
+
+
+|TopLevelModule|UART_tx:UART_Transmitter|Serialiser:UART_SERIALISER_INST
+Clk => ShiftRegister[0].CLK
+Clk => ShiftRegister[1].CLK
+Clk => ShiftRegister[2].CLK
+Clk => ShiftRegister[3].CLK
+Clk => ShiftRegister[4].CLK
+Clk => ShiftRegister[5].CLK
+Clk => ShiftRegister[6].CLK
+Clk => ShiftRegister[7].CLK
+Clk => ShiftRegister[8].CLK
+Clk => ShiftRegister[9].CLK
+Rst => ShiftRegister[0].PRESET
+Rst => ShiftRegister[1].PRESET
+Rst => ShiftRegister[2].PRESET
+Rst => ShiftRegister[3].PRESET
+Rst => ShiftRegister[4].PRESET
+Rst => ShiftRegister[5].PRESET
+Rst => ShiftRegister[6].PRESET
+Rst => ShiftRegister[7].PRESET
+Rst => ShiftRegister[8].PRESET
+Rst => ShiftRegister[9].PRESET
+ShiftEn => ShiftRegister.OUTPUTSELECT
+ShiftEn => ShiftRegister.OUTPUTSELECT
+ShiftEn => ShiftRegister.OUTPUTSELECT
+ShiftEn => ShiftRegister.OUTPUTSELECT
+ShiftEn => ShiftRegister.OUTPUTSELECT
+ShiftEn => ShiftRegister.OUTPUTSELECT
+ShiftEn => ShiftRegister.OUTPUTSELECT
+ShiftEn => ShiftRegister.OUTPUTSELECT
+ShiftEn => ShiftRegister.OUTPUTSELECT
+ShiftEn => ShiftRegister.OUTPUTSELECT
+Load => ShiftRegister.OUTPUTSELECT
+Load => ShiftRegister.OUTPUTSELECT
+Load => ShiftRegister.OUTPUTSELECT
+Load => ShiftRegister.OUTPUTSELECT
+Load => ShiftRegister.OUTPUTSELECT
+Load => ShiftRegister.OUTPUTSELECT
+Load => ShiftRegister.OUTPUTSELECT
+Load => ShiftRegister.OUTPUTSELECT
+Load => ShiftRegister.OUTPUTSELECT
+Load => ShiftRegister.OUTPUTSELECT
+Din[0] => ShiftRegister.DATAB
+Din[1] => ShiftRegister.DATAB
+Din[2] => ShiftRegister.DATAB
+Din[3] => ShiftRegister.DATAB
+Din[4] => ShiftRegister.DATAB
+Din[5] => ShiftRegister.DATAB
+Din[6] => ShiftRegister.DATAB
+Din[7] => ShiftRegister.DATAB
+Din[8] => ShiftRegister.DATAB
+Din[9] => ShiftRegister.DATAB
+Dout <= ShiftRegister[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevelModule|UART_tx:UART_Transmitter|BaudClkGenerator:UART_BIT_TIMING_INST
+Clk => Ready~reg0.CLK
+Clk => ClocksLeft[0].CLK
+Clk => ClocksLeft[1].CLK
+Clk => ClocksLeft[2].CLK
+Clk => ClocksLeft[3].CLK
+Clk => BitPeriodCounter[0].CLK
+Clk => BitPeriodCounter[1].CLK
+Clk => BitPeriodCounter[2].CLK
+Clk => BitPeriodCounter[3].CLK
+Clk => BitPeriodCounter[4].CLK
+Clk => BitPeriodCounter[5].CLK
+Clk => BitPeriodCounter[6].CLK
+Clk => BitPeriodCounter[7].CLK
+Clk => BitPeriodCounter[8].CLK
+Clk => BaudClk~reg0.CLK
+Rst => Ready~reg0.PRESET
+Rst => ClocksLeft[0].ACLR
+Rst => ClocksLeft[1].ACLR
+Rst => ClocksLeft[2].ACLR
+Rst => ClocksLeft[3].ACLR
+Rst => BitPeriodCounter[0].ACLR
+Rst => BitPeriodCounter[1].ACLR
+Rst => BitPeriodCounter[2].ACLR
+Rst => BitPeriodCounter[3].ACLR
+Rst => BitPeriodCounter[4].ACLR
+Rst => BitPeriodCounter[5].ACLR
+Rst => BitPeriodCounter[6].ACLR
+Rst => BitPeriodCounter[7].ACLR
+Rst => BitPeriodCounter[8].ACLR
+Rst => BaudClk~reg0.ACLR
+Start => ClocksLeft.OUTPUTSELECT
+Start => ClocksLeft.OUTPUTSELECT
+Start => ClocksLeft.OUTPUTSELECT
+Start => ClocksLeft.OUTPUTSELECT
+Start => Ready.OUTPUTSELECT
+BaudClk <= BaudClk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Ready <= Ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevelModule|UART_rx:UART_Receiver
+Clk => Sync:Sync_Rx.Clk
+Clk => RxIRQ~reg0.CLK
+Clk => Start.CLK
+Clk => RS232_Rx_Synced_Delay.CLK
+Clk => FallingEdge.CLK
+Clk => BaudClkGenerator:BaudClkGenerator_Rx.Clk
+Clk => ShiftRegister:ShiftRegister_Rx.Clk
+Clk => SMStateVariable~4.DATAIN
+Rst => Sync:Sync_Rx.Rst
+Rst => RxIRQ~reg0.ACLR
+Rst => Start.ACLR
+Rst => RS232_Rx_Synced_Delay.PRESET
+Rst => FallingEdge.ACLR
+Rst => BaudClkGenerator:BaudClkGenerator_Rx.Rst
+Rst => ShiftRegister:ShiftRegister_Rx.Rst
+Rst => SMStateVariable~6.DATAIN
+RS232_Rx => Sync:Sync_Rx.Async
+RxIRQClear => RxIRQ.OUTPUTSELECT
+RxIRQ <= RxIRQ~reg0.DB_MAX_OUTPUT_PORT_TYPE
+RxData[0] <= ShiftRegister:ShiftRegister_Rx.Dout[0]
+RxData[1] <= ShiftRegister:ShiftRegister_Rx.Dout[1]
+RxData[2] <= ShiftRegister:ShiftRegister_Rx.Dout[2]
+RxData[3] <= ShiftRegister:ShiftRegister_Rx.Dout[3]
+RxData[4] <= ShiftRegister:ShiftRegister_Rx.Dout[4]
+RxData[5] <= ShiftRegister:ShiftRegister_Rx.Dout[5]
+RxData[6] <= ShiftRegister:ShiftRegister_Rx.Dout[6]
+RxData[7] <= ShiftRegister:ShiftRegister_Rx.Dout[7]
+
+
+|TopLevelModule|UART_rx:UART_Receiver|Sync:Sync_Rx
+Clk => SR[0].CLK
+Clk => SR[1].CLK
+Rst => SR[0].PRESET
+Rst => SR[1].PRESET
+Async => SR[0].DATAIN
+Synced <= SR[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevelModule|UART_rx:UART_Receiver|BaudClkGenerator:BaudClkGenerator_Rx
+Clk => Ready~reg0.CLK
+Clk => ClocksLeft[0].CLK
+Clk => ClocksLeft[1].CLK
+Clk => ClocksLeft[2].CLK
+Clk => ClocksLeft[3].CLK
+Clk => BitPeriodCounter[0].CLK
+Clk => BitPeriodCounter[1].CLK
+Clk => BitPeriodCounter[2].CLK
+Clk => BitPeriodCounter[3].CLK
+Clk => BitPeriodCounter[4].CLK
+Clk => BitPeriodCounter[5].CLK
+Clk => BitPeriodCounter[6].CLK
+Clk => BitPeriodCounter[7].CLK
+Clk => BitPeriodCounter[8].CLK
+Clk => BaudClk~reg0.CLK
+Rst => Ready~reg0.PRESET
+Rst => ClocksLeft[0].ACLR
+Rst => ClocksLeft[1].ACLR
+Rst => ClocksLeft[2].ACLR
+Rst => ClocksLeft[3].ACLR
+Rst => BitPeriodCounter[0].ACLR
+Rst => BitPeriodCounter[1].ACLR
+Rst => BitPeriodCounter[2].ACLR
+Rst => BitPeriodCounter[3].ACLR
+Rst => BitPeriodCounter[4].ACLR
+Rst => BitPeriodCounter[5].ACLR
+Rst => BitPeriodCounter[6].ACLR
+Rst => BitPeriodCounter[7].ACLR
+Rst => BitPeriodCounter[8].ACLR
+Rst => BaudClk~reg0.ACLR
+Start => ClocksLeft.OUTPUTSELECT
+Start => ClocksLeft.OUTPUTSELECT
+Start => ClocksLeft.OUTPUTSELECT
+Start => ClocksLeft.OUTPUTSELECT
+Start => Ready.OUTPUTSELECT
+BaudClk <= BaudClk~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Ready <= Ready~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TopLevelModule|UART_rx:UART_Receiver|ShiftRegister:ShiftRegister_Rx
+Clk => SR[0].CLK
+Clk => SR[1].CLK
+Clk => SR[2].CLK
+Clk => SR[3].CLK
+Clk => SR[4].CLK
+Clk => SR[5].CLK
+Clk => SR[6].CLK
+Clk => SR[7].CLK
+Rst => SR[0].ACLR
+Rst => SR[1].ACLR
+Rst => SR[2].ACLR
+Rst => SR[3].ACLR
+Rst => SR[4].ACLR
+Rst => SR[5].ACLR
+Rst => SR[6].ACLR
+Rst => SR[7].ACLR
+ShiftEn => SR[7].ENA
+ShiftEn => SR[6].ENA
+ShiftEn => SR[5].ENA
+ShiftEn => SR[4].ENA
+ShiftEn => SR[3].ENA
+ShiftEn => SR[2].ENA
+ShiftEn => SR[1].ENA
+ShiftEn => SR[0].ENA
+Din => SR[7].DATAIN
+Dout[0] <= SR[0].DB_MAX_OUTPUT_PORT_TYPE
+Dout[1] <= SR[1].DB_MAX_OUTPUT_PORT_TYPE
+Dout[2] <= SR[2].DB_MAX_OUTPUT_PORT_TYPE
+Dout[3] <= SR[3].DB_MAX_OUTPUT_PORT_TYPE
+Dout[4] <= SR[4].DB_MAX_OUTPUT_PORT_TYPE
+Dout[5] <= SR[5].DB_MAX_OUTPUT_PORT_TYPE
+Dout[6] <= SR[6].DB_MAX_OUTPUT_PORT_TYPE
+Dout[7] <= SR[7].DB_MAX_OUTPUT_PORT_TYPE
+
+

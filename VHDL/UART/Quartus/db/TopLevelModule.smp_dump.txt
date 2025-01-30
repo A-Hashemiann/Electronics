@@ -1,0 +1,6 @@
+
+State Machine - |TopLevelModule|UART_rx:UART_Receiver|SMStateVariable
+Name SMStateVariable.ASSERT_IRQ SMStateVariable.COLLECT_RS232_DATA SMStateVariable.IDLE 
+SMStateVariable.IDLE 0 0 0 
+SMStateVariable.COLLECT_RS232_DATA 0 1 1 
+SMStateVariable.ASSERT_IRQ 1 0 1 
