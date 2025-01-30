@@ -106,7 +106,17 @@ begin
         end procedure;
     
     begin
+        Rst <= '1';
+        rs232_rx_pin <= '1';
+        wait for 100ns;
+        Rst <= '0';
+        wait for 100ns;
         
+        --TRANSMIT_CHARACTER(33);
+        for i in 0 to 255 loop
+            TRANSMIT_CHARACTER(i);
+            wait for 20us;
+        end loop;
         
         wait;
     end process;
